@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
+    "start:docker": "docker-compose pull && docker-compose up --remove-orphans",
     "test": "jest",
     "codegen": "./node_modules/.bin/subql codegen"
   },
