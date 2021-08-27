@@ -9,7 +9,6 @@ export async function handleBlock(block: SubstrateBlock): Promise<void> {
     //Record block number
     record.field1 = block.block.header.number.toNumber();
     await record.save();
-    logger.info('info test');
 }
 
 export async function handleEvent(event: SubstrateEvent): Promise<void> {

@@ -7,11 +7,10 @@
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
     "start:docker": "docker-compose pull && docker-compose up --remove-orphans",
+    "start:newDocker": "rm -rf .data && docker-compose pull && docker-compose up --remove-orphans",
     "test": "jest",
     "codegen": "./node_modules/.bin/subql codegen"
   },
-  "homepage": "https://github.com/subquery/subql-starter",
-  "repository": "github:subquery/subql-starter",
   "files": [
     "dist",
     "schema.graphql",
@@ -23,6 +22,7 @@
     "@polkadot/api": "^4.6.2",
     "@subql/types": "latest",
     "typescript": "^4.1.3",
-    "@subql/cli": "latest"
+    "@subql/cli": "latest",
+    "@subql/node": "^0.19.1"
   }
 }

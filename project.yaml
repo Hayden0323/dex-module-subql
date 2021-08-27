@@ -3,7 +3,29 @@ description: ''
 repository: ''
 schema: ./schema.graphql
 network:
-  endpoint: "wss://polkadot.api.onfinality.io/public-ws"
+  endpoint: wss://devparachain-pre.zenlink.pro
+  types: {
+      "Address": "MultiAddress",
+      "LookupSource": "MultiAddress",
+      "AssetId": {
+        "chain_id": "u32",
+        "asset_type": "u8",
+        "asset_index": "u32"
+      },
+      "AssetBalance": "u128",
+      "TAssetBalance": "u128",
+      "PairInfo": {
+        "asset_0": "AssetId",
+        "asset_1": "AssetId",
+        "account": "AccountId",
+        "total_liquidity": "AssetBalance",
+        "holding_liquidity": "AssetBalance",
+        "reserve_0": "AssetBalance",
+        "reserve_1": "AssetBalance",
+        "lp_asset_id": "AssetId"
+      },
+      "TokenId": "u32",
+  }
 dataSources:
   - name: main
     kind: substrate/Runtime
