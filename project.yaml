@@ -29,7 +29,7 @@ network:
 dataSources:
   - name: main
     kind: substrate/Runtime
-    startBlock: 1
+    startBlock: 128890
     mapping:
       handlers:
         - handler: handleBlock
@@ -41,3 +41,8 @@ dataSources:
             method: Deposit
         - handler: handleCall
           kind: substrate/CallHandler
+        - handler: handleSwap
+          kind: substrate/EventHandler
+          filter:
+            module: zenlinkProtocol
+            method: AssetSwap

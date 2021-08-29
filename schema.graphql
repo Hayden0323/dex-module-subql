@@ -15,3 +15,10 @@ type StarterEntity @entity {
 
 
 }
+
+type SwapEntity @entity {
+  id: ID!
+  block_height: Int!
+  sender: String
+  recipient: String
+}
